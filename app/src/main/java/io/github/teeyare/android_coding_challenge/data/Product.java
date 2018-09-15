@@ -2,6 +2,7 @@ package io.github.teeyare.android_coding_challenge.data;
 
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
+import android.support.annotation.NonNull;
 
 /**
  * Created by teeyare (tarik) on 9/15/18.
@@ -9,15 +10,16 @@ import android.arch.persistence.room.PrimaryKey;
 @Entity(tableName = "products")
 public class Product {
 
-    @PrimaryKey
+    @NonNull @PrimaryKey
     private String itemId;
     private double value;
     private String currency;
     private String title;
     private Description description;
 
-    public Product(String itemId, String currency, String title, Description description) {
+    public Product(@NonNull String itemId, double value, String currency, String title, Description description) {
         this.itemId = itemId;
+        this.value = value;
         this.currency = currency;
         this.title = title;
         this.description = description;

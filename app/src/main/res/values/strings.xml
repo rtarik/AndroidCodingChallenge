@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Android-Coding-Challenge</string>
     <string name="view_products">View products</string>
+    <string name="item">Item: %1$s</string>
+    <string name="price">Price: $%1$f(%2$s)</string>
+    <string name="description">Description: %1$s</string>
 </resources>

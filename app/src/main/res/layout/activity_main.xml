@@ -3,7 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.MainActivity">
+    tools:context=".ui.MainActivity"
+    android:background="@color/blueSky">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/art_sun"
+        android:contentDescription="@string/sunny" />
 
     <Button
         android:id="@+id/button_main"
@@ -11,7 +18,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal|bottom"
         android:text="@string/view_products"
-        android:layout_marginBottom="16dp"
-        android:padding="8dp"/>
+        android:layout_marginBottom="48dp"
+        android:padding="8dp"
+        android:textSize="18sp"/>
 
 </FrameLayout>

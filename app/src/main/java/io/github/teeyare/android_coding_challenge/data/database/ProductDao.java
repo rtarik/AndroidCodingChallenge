@@ -21,4 +21,7 @@ public interface ProductDao {
 
     @Query("SELECT * FROM products")
     LiveData<List<Product>> getAll();
+
+    @Query("DELETE FROM products")
+    void deleteAll();
 }

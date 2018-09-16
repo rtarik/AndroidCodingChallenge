@@ -16,8 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.productList.ProductListActivity" />
-        <activity android:name=".ui.productDetails.ProductDetailsActivity"></activity>
+        <activity android:name=".ui.productList.ProductListActivity"
+            android:parentActivityName=".ui.MainActivity"/>
+        <activity android:name=".ui.productDetails.ProductDetailsActivity"
+            android:parentActivityName=".ui.productList.ProductListActivity"/>
     </application>
 
 </manifest>

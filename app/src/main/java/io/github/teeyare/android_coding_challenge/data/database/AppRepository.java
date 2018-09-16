@@ -32,6 +32,7 @@ public class AppRepository {
                 AppExecutors.getInstance().diskIO().execute(new Runnable() {
                     @Override
                     public void run() {
+                        dao.deleteAll();
                         dao.bulkInsert(products);
                     }
                 });

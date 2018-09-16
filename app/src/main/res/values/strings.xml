@@ -2,7 +2,11 @@
     <string name="app_name">Android-Coding-Challenge</string>
     <string name="view_products">View products</string>
     <string name="item">Item: %1$s</string>
-    <string name="price">Price: $%1$f(%2$s)</string>
+    <string name="price">Price: $%1$.2f (%2$s)</string>
     <string name="description">Description: %1$s</string>
-    <string name="item_summary">%1$s: $%2$f(%3$s)</string>
+    <string name="item_summary">%1$s: $%2$.2f (%3$s)</string>
+    <string name="main_title">Welcome</string>
+    <string name="sunny">sunny</string>
+    <string name="products">Porducts</string>
+    <string name="product_detail">Product Detail</string>
 </resources>

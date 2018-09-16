@@ -1,27 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:background="@color/blueSky"
     tools:context=".ui.productDetails.ProductDetailsActivity">
 
-    <TextView
-        android:id="@+id/text_item"
-        android:text="@string/item"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="36dp"
+        android:background="@android:color/white">
 
-    <TextView
-        android:id="@+id/text_price"
-        android:text="@string/price"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        <ImageView
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:src="@drawable/art_sun"
+            android:layout_marginTop="8dp"
+            android:layout_gravity="center_horizontal"
+            android:contentDescription="@string/sunny"/>
 
-    <TextView
-        android:id="@+id/text_description"
-        android:text="@string/description"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/text_item"
+            android:text="@string/item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:paddingBottom="8dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="8dp"
+            />
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/text_price"
+            android:text="@string/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:paddingBottom="8dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="8dp"/>
+
+        <TextView
+            android:id="@+id/text_description"
+            android:text="@string/description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:paddingBottom="8dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="8dp"/>
+
+    </LinearLayout>
+
+</FrameLayout>

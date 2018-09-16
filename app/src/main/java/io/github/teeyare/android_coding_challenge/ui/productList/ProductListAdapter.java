@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -23,7 +24,6 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
 
     private List<Product> products;
     private Context context;
-    //private LayoutInflater inflater;
 
     ProductListAdapter(Context context) {
         this.context = context;
@@ -47,7 +47,7 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
                         product.getValue(),
                         product.getCurrency())
         );
-        viewHolder.itemSummary.setOnClickListener(new View.OnClickListener() {
+        viewHolder.itemLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, ProductDetailsActivity.class);
@@ -69,9 +69,11 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
 
     class ViewHolder extends RecyclerView.ViewHolder {
 
+        LinearLayout itemLayout;
         TextView itemSummary;
         ViewHolder(@NonNull View itemView) {
             super(itemView);
+            itemLayout = itemView.findViewById(R.id.layout_item);
             itemSummary = itemView.findViewById(R.id.text_item_summary);
         }
     }

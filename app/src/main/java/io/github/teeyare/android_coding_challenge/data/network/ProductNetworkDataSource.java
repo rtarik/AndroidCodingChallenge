@@ -2,12 +2,11 @@ package io.github.teeyare.android_coding_challenge.data.network;
 
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
+import android.util.Log;
 
 import com.google.gson.Gson;
 
-import java.util.List;
-
-import io.github.teeyare.android_coding_challenge.data.Product;
+import io.github.teeyare.android_coding_challenge.data.database.Product;
 import io.github.teeyare.android_coding_challenge.utils.AppExecutors;
 
 /**

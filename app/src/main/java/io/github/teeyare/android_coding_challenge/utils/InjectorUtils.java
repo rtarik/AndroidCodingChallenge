@@ -2,8 +2,8 @@ package io.github.teeyare.android_coding_challenge.utils;
 
 import android.content.Context;
 
-import io.github.teeyare.android_coding_challenge.data.AppDatabase;
-import io.github.teeyare.android_coding_challenge.data.AppRepository;
+import io.github.teeyare.android_coding_challenge.data.database.AppDatabase;
+import io.github.teeyare.android_coding_challenge.data.database.AppRepository;
 import io.github.teeyare.android_coding_challenge.data.network.ProductNetworkDataSource;
 
 /**

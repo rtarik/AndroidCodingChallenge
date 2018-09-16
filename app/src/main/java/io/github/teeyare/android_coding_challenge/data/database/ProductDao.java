@@ -1,8 +1,9 @@
-package io.github.teeyare.android_coding_challenge.data;
+package io.github.teeyare.android_coding_challenge.data.database;
 
 import android.arch.lifecycle.LiveData;
 import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Insert;
+import android.arch.persistence.room.OnConflictStrategy;
 import android.arch.persistence.room.Query;
 
 import java.util.List;
@@ -12,7 +13,7 @@ import java.util.List;
  */
 @Dao
 public interface ProductDao {
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     void bulkInsert(Product... products);
 
     @Query("SELECT * FROM products WHERE itemId = :itemId")

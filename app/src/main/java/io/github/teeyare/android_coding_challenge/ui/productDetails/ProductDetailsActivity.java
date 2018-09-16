@@ -9,11 +9,12 @@ import android.util.Log;
 import android.widget.TextView;
 
 import io.github.teeyare.android_coding_challenge.R;
-import io.github.teeyare.android_coding_challenge.data.Product;
-import io.github.teeyare.android_coding_challenge.utils.AppExecutors;
+import io.github.teeyare.android_coding_challenge.data.database.Product;
+import io.github.teeyare.android_coding_challenge.utils.InjectorUtils;
 
 public class ProductDetailsActivity extends AppCompatActivity {
 
+    public static final String EXTRA_ITEM_ID = "extra.item.id";
     private ProductDetailsViewModel viewModel;
 
     @Override
@@ -21,30 +22,17 @@ public class ProductDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product_details);
 
-        viewModel = ViewModelProviders.of(this).get(ProductDetailsViewModel.class);
-        viewModel.getProduct().observe(this, new Observer<Product>() {
+        String itemId = getIntent().getExtras().getString(EXTRA_ITEM_ID);
+
+        ProductDetailsViewModelFactory factory = new ProductDetailsViewModelFactory(
+                InjectorUtils.provideRepository(this)
+        );
+        viewModel = ViewModelProviders.of(this, factory).get(ProductDetailsViewModel.class);
+        viewModel.getProduct(itemId).observe(this, new Observer<Product>() {
             @Override
             public void onChanged(@Nullable Product product) {
-                showProduct(product);
-            }
-        });
-
-        AppExecutors.getInstance().diskIO().execute(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    Thread.sleep(4000);
-                    Product p = new Product("123", 100.0,"CAD", "item1",
-                            new Product.Description("desc en-ca", "desc fr-ca"));
-                    viewModel.setProduct(p);
-
-                    Thread.sleep(2000);
-                    p = new Product("456", 75.0,"USD", "item2",
-                            new Product.Description("desc en-ca", "desc fr-ca"));
-                    viewModel.setProduct(p);
-
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
+                if (product != null) {
+                    showProduct(product);
                 }
             }
         });

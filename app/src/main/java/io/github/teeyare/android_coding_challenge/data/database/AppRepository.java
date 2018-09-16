@@ -1,4 +1,4 @@
-package io.github.teeyare.android_coding_challenge.data;
+package io.github.teeyare.android_coding_challenge.data.database;
 
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.Observer;
@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import java.util.List;
 
 import io.github.teeyare.android_coding_challenge.data.network.ProductNetworkDataSource;
+import io.github.teeyare.android_coding_challenge.utils.AppExecutors;
 
 /**
  * Created by teeyare (tarik) on 9/16/18.
@@ -18,20 +19,28 @@ public class AppRepository {
     private ProductDao dao;
     private ProductNetworkDataSource dataSource;
 
+    // We fetch data once per app lifetime
+    private boolean hasFetchedData;
+
     private AppRepository(final ProductDao dao, ProductNetworkDataSource dataSource) {
         this.dao = dao;
         this.dataSource = dataSource;
 
         dataSource.getDownloadedProducts().observeForever(new Observer<Product[]>() {
             @Override
-            public void onChanged(@Nullable Product[] products) {
-                dao.bulkInsert(products);
+            public void onChanged(@Nullable final Product[] products) {
+                AppExecutors.getInstance().diskIO().execute(new Runnable() {
+                    @Override
+                    public void run() {
+                        dao.bulkInsert(products);
+                    }
+                });
             }
         });
     }
 
     public static AppRepository getInstance(ProductDao dao,
-                                                         ProductNetworkDataSource dataSource) {
+                                            ProductNetworkDataSource dataSource) {
         if (instance == null) {
             synchronized (LOCK) {
                 instance = new AppRepository(dao, dataSource);
@@ -41,7 +50,14 @@ public class AppRepository {
     }
 
     public LiveData<List<Product>> getProducts() {
-        dataSource.fetchProducts();
+        if (!hasFetchedData) {
+            dataSource.fetchProducts();
+            hasFetchedData = true;
+        }
         return dao.getAll();
+    }
+
+    public LiveData<Product> getProductById(String itemId) {
+        return dao.getProductById(itemId);
     }
 }

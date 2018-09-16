@@ -1,4 +1,4 @@
-package io.github.teeyare.android_coding_challenge.data;
+package io.github.teeyare.android_coding_challenge.data.database;
 
 import android.arch.persistence.room.Database;
 import android.arch.persistence.room.Room;

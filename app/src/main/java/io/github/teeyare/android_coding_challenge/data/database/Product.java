@@ -1,8 +1,10 @@
-package io.github.teeyare.android_coding_challenge.data;
+package io.github.teeyare.android_coding_challenge.data.database;
 
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.NonNull;
+
+import com.google.gson.annotations.SerializedName;
 
 /**
  * Created by teeyare (tarik) on 9/15/18.
@@ -66,7 +68,9 @@ public class Product {
     }
 
     public static class Description {
+        @SerializedName("en-CA")
         private String en_CA;
+        @SerializedName("fr-CA")
         private String fr_CA;
 
         public Description(String en_CA, String fr_CA) {

@@ -8,6 +8,7 @@ import android.widget.Button;
 
 import io.github.teeyare.android_coding_challenge.R;
 import io.github.teeyare.android_coding_challenge.ui.productDetails.ProductDetailsActivity;
+import io.github.teeyare.android_coding_challenge.ui.productList.ProductListActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,8 +22,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(
-                        //TODO click should go to ProductListActivity
-                        new Intent(MainActivity.this, ProductDetailsActivity.class)
+                        new Intent(MainActivity.this, ProductListActivity.class)
                 );
             }
         });

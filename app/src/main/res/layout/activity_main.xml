@@ -3,23 +3,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.MainActivity"
-    android:background="@color/blueSky">
+    android:background="@color/blueSky"
+    tools:context=".ui.MainActivity">
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/art_sun"
-        android:contentDescription="@string/sunny" />
+        android:contentDescription="@string/sunny"
+        android:src="@drawable/art_sun" />
 
     <Button
         android:id="@+id/button_main"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal|bottom"
-        android:text="@string/view_products"
         android:layout_marginBottom="48dp"
         android:padding="8dp"
-        android:textSize="18sp"/>
+        android:text="@string/view_products"
+        android:textSize="18sp" />
 
 </FrameLayout>

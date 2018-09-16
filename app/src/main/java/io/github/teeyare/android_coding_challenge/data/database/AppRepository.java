@@ -50,6 +50,10 @@ public class AppRepository {
         return instance;
     }
 
+    /**
+     * Checks if the data has already been fetched and fetch it otherwise
+     * @return an observable of the list of products
+     */
     public LiveData<List<Product>> getProducts() {
         if (!hasFetchedData) {
             dataSource.fetchProducts();
@@ -58,6 +62,11 @@ public class AppRepository {
         return dao.getAll();
     }
 
+    /**
+     * Retrieves one item product by id from the database
+     * @param itemId is the primary key of the products table
+     * @return one record from the database
+     */
     public LiveData<Product> getProductById(String itemId) {
         return dao.getProductById(itemId);
     }

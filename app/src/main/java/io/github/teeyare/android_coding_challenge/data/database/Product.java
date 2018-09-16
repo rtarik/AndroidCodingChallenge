@@ -8,6 +8,8 @@ import com.google.gson.annotations.SerializedName;
 
 /**
  * Created by teeyare (tarik) on 9/15/18.
+ *
+ * Simple class defining POJOs
  */
 @Entity(tableName = "products")
 public class Product {

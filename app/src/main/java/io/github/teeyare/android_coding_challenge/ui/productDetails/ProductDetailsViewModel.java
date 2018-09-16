@@ -12,6 +12,11 @@ import io.github.teeyare.android_coding_challenge.data.database.Product;
 public class ProductDetailsViewModel extends ViewModel {
     private AppRepository repository;
 
+    /**
+     * Constructor method
+     * @param repo the AppRepository is passed in the constructor, this way it can
+     *             be easily mocked in testing
+     */
     ProductDetailsViewModel(AppRepository repo) {
         repository = repo;
 

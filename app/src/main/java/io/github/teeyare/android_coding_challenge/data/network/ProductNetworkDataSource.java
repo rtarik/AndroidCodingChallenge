@@ -2,7 +2,6 @@ package io.github.teeyare.android_coding_challenge.data.network;
 
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
-import android.util.Log;
 
 import com.google.gson.Gson;
 
@@ -11,6 +10,8 @@ import io.github.teeyare.android_coding_challenge.utils.AppExecutors;
 
 /**
  * Created by teeyare (tarik) on 9/16/18.
+ *
+ * This class is responsible for all the networking operations
  */
 public class ProductNetworkDataSource {
     private static final Object LOCK = new Object();
@@ -20,6 +21,7 @@ public class ProductNetworkDataSource {
     private final MutableLiveData<Product[]> downloadedProducts;
 
     private ProductNetworkDataSource() {
+        // This will be observed by the repository so that it knows when to insert in the database
         downloadedProducts = new MutableLiveData<>();
     }
 

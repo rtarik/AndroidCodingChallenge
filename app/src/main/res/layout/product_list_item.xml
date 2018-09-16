@@ -3,23 +3,23 @@
     android:id="@+id/layout_item"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:background="@android:color/white">
+    android:background="@android:color/white"
+    android:orientation="horizontal">
 
     <ImageView
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_margin="8dp"
-        android:src="@drawable/art_sun"
-        android:contentDescription="@string/sunny" />
+        android:contentDescription="@string/sunny"
+        android:src="@drawable/art_sun" />
 
     <TextView
         android:id="@+id/text_item_summary"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
         android:text="@string/item_summary"
         android:textColor="@android:color/black"
-        android:textSize="18sp"
-        android:layout_gravity="center_vertical"/>
+        android:textSize="18sp" />
 
 </LinearLayout>

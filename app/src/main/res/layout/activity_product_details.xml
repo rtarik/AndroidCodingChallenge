@@ -9,51 +9,50 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:layout_margin="36dp"
-        android:background="@android:color/white">
+        android:background="@android:color/white"
+        android:orientation="vertical">
 
         <ImageView
             android:layout_width="96dp"
             android:layout_height="96dp"
-            android:src="@drawable/art_sun"
-            android:layout_marginTop="8dp"
             android:layout_gravity="center_horizontal"
-            android:contentDescription="@string/sunny"/>
+            android:layout_marginTop="8dp"
+            android:contentDescription="@string/sunny"
+            android:src="@drawable/art_sun" />
 
         <TextView
             android:id="@+id/text_item"
-            android:text="@string/item"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@android:color/black"
-            android:textSize="16sp"
             android:paddingBottom="8dp"
-            android:paddingStart="16dp"
             android:paddingEnd="8dp"
-            />
+            android:paddingStart="16dp"
+            android:text="@string/item"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/text_price"
-            android:text="@string/price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@android:color/black"
-            android:textSize="16sp"
             android:paddingBottom="8dp"
+            android:paddingEnd="8dp"
             android:paddingStart="16dp"
-            android:paddingEnd="8dp"/>
+            android:text="@string/price"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/text_description"
-            android:text="@string/description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@android:color/black"
-            android:textSize="16sp"
             android:paddingBottom="8dp"
+            android:paddingEnd="8dp"
             android:paddingStart="16dp"
-            android:paddingEnd="8dp"/>
+            android:text="@string/description"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
 
     </LinearLayout>
 

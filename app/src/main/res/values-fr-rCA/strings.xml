@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Android-Coding-Challenge</string>
+    <string name="view_products">Consulter tous les articles</string>
+    <string name="item">Article: %1$s</string>
+    <string name="price">Prix: $%1$.2f (%2$s)</string>
+    <string name="description">Description: %1$s</string>
+    <string name="item_summary">%1$s: $%2$.2f (%3$s)</string>
+    <string name="main_title">Bienvennue</string>
+    <string name="sunny">sunny</string>
+    <string name="products">Articles</string>
+    <string name="product_detail">Article détaillé</string>
+</resources>

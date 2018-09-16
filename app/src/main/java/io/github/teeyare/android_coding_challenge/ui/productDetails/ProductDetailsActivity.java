@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.widget.TextView;
 
 import io.github.teeyare.android_coding_challenge.R;
@@ -52,10 +51,9 @@ public class ProductDetailsActivity extends AppCompatActivity {
 
         item.setText(getString(R.string.item, product.getTitle()));
         price.setText(getString(R.string.price, product.getValue(), product.getCurrency()));
-        String locale = getResources().getConfiguration().locale.getDisplayName();
-        Log.d("ProductDetailsActivity", locale);
+        String locale = getResources().getConfiguration().locale.toString();
         String d;
-        if (locale.equals("French (Canada)")) {
+        if (locale.equals("fr_CA")) {
             d = product.getDescription().getFr_CA();
         }
         else {

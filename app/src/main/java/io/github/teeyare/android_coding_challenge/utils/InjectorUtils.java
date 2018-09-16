@@ -18,6 +18,4 @@ public class InjectorUtils {
         return AppRepository.getInstance(db.productDao(),
                 ProductNetworkDataSource.getInstance());
     }
-
-
 }
